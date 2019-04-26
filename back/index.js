@@ -11,5 +11,3 @@ app.get('/', function (req, res) {
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
-// blogNannyAngular
-// A small simple blog made with angular7 for a nanny who is not comfortable with new technology but would like to have visibility on the internet.
