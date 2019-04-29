@@ -10,12 +10,5 @@ export class AppComponent {
   title = 'front';
   constructor(
     public http: HttpClient,
-  ) {
-    this.http.get('/api').subscribe(
-      res => {
-        console.log('okokok', res)
-      }
-    )
-    
-  }
+  ) {}
 }
