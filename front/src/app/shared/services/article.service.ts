@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ArticleResponseModel } from '../model';
 
 @Injectable()
 export class ArticleService {
@@ -25,11 +26,7 @@ export class ArticleService {
         return this.httpClient.delete(`/api/articles/${articleId}`, this.header)
     }
 
-    public getArticleList() {
-        this.httpClient.get('/api/articles', this.header).subscribe(
-            res => {
-                console.log('get', res)
-            }
-        )
+    public getArticleList(): Observable<ArticleResponseModel[]> {
+        return this.httpClient.get<ArticleResponseModel[]>('/api/articles', this.header)
     }
 }

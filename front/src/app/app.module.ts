@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
 import { BlogModule } from './module/blog/blog.module';
+import { ArticleService } from './shared/services/article.service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,12 @@ import { BlogModule } from './module/blog/blog.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    CommonModule,
     BlogModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    ArticleService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,1 +1,6 @@
 Bonjour
+<section *ngIf="articleList">
+    <ul>
+        <li *ngFor="let article of articleList">{{article.data.title}} poster le {{article.postDate | date:'dd/MM/yyyy'}} <a routerLink="/blog/{{article.id}}" routerLinkActive="router-link-active">go</a></li>
+    </ul>
+</section>
