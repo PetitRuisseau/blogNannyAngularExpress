@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
+import { BlogModule } from './module/blog/blog.module';
 
 @NgModule({
   declarations: [
@@ -13,8 +14,9 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BlogModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
