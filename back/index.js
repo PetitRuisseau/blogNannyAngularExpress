@@ -24,6 +24,18 @@ app.get('/articles', function (req, res) {
   });
 })
 
+app.get('/articles/:articleId', function (req, res) {
+  let id = req.params.articleId
+  fs.readdir('./data/articles', (err, files) => {
+    if (files && files.indexOf(id + '.json') >= 0) {
+      let data = JSON.parse(fs.readFileSync(`./data/articles/${id}.json`))
+      return res.send(JSON.stringify(data))
+    } else {
+      return res.send(JSON.stringify(null))
+    }
+  });
+})
+
 app.post('/articles', (req, res) => {
   let article = {}
   let data = JSON.parse(req.body)

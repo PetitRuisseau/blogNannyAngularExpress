@@ -29,4 +29,8 @@ export class ArticleService {
     public getArticleList(): Observable<ArticleResponseModel[]> {
         return this.httpClient.get<ArticleResponseModel[]>('/api/articles', this.header)
     }
+
+    public getArticle(articleId: string): Observable<ArticleResponseModel> {
+        return this.httpClient.get<ArticleResponseModel>(`/api/articles/${articleId}`, this.header)
+    }
 }
